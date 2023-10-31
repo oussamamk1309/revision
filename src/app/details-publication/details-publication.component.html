@@ -1,0 +1,10 @@
+
+<div *ngIf="publication != null">
+    Titre : {{publication.titre}} <br>
+    Description : {{publication.description}} <br>
+    Public : {{publication.public}} <br>
+    Like : {{publication.like}} <br>
+</div>
+<div *ngIf="publication == null">
+    La publication n'existe pas
+</div>

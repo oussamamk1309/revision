@@ -1,0 +1,25 @@
+{
+  "publication": [
+    {
+      "titre": "PublicationOne",
+      "description": "description publication 1",
+      "public": true,
+      "like": 163,
+      "id": 1
+    },
+    {
+      "description": "description publication 2",
+      "titre": "PublicationTwo",
+      "public": true,
+      "like": 10058,
+      "id": 2
+    },
+    {
+      "description": "description publication 3",
+      "titre": "PublicationThree",
+      "public": false,
+      "like": 500,
+      "id": 3
+    }
+  ]
+}

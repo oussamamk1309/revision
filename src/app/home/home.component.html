@@ -1,0 +1,33 @@
+<div>
+    <input type="text" [(ngModel)]="titre">
+    <button type="button" (click)="chercherPub()">Chercher</button>
+
+    <div *ngIf="publication != null">
+        Titre : {{publication.titre}} <br>
+        Description : {{publication.description}} <br>
+        Public : {{publication.public}} <br>
+        Like : {{publication.like}} <br>
+    </div>
+</div>
+<br>
+<table>
+    <tr>
+        <td>Titre</td>
+        <td>Description</td>
+        <td>Public</td>
+        <td>Like</td>
+        <td>Action</td>
+    </tr>
+    <tr *ngFor="let publication of publications">
+        <ng-container *ngIf="publication.public == true">
+            <td>{{publication.titre}}</td>
+            <td>{{publication.description}}</td>
+            <td>{{publication.public}}</td>
+            <td>{{publication.like}}</td>
+            <td>
+                <button type="button" (click)="like(publication)">Like</button>
+                <button type="button" (click)="detailsPub(publication.id)">Details</button>
+            </td>
+        </ng-container>
+    </tr>
+</table>

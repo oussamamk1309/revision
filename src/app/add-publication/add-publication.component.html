@@ -1,0 +1,33 @@
+<form #f="ngForm" (ngSubmit)="addPub()">
+    <div>
+        <label>Titre</label>
+        <input type="text" [(ngModel)]="publication.titre" pattern="[A-Z]+[A-Za-z]*" #titre="ngModel" name="titre" required>
+        <div *ngIf="titre.invalid && titre.touched">
+            <div *ngIf="titre.errors!['required']">
+                Le titre est obligatoire
+            </div>
+            <div *ngIf="titre.errors!['pattern']">
+                Le titre doit commencer par lettre majuscule et contient que des lettres
+            </div>
+        </div>
+    </div>
+    <div>
+        <label>Description</label>
+        <input type="text" [(ngModel)]="publication.description" name="description" #description="ngModel" minlength="10" required>
+        <div *ngIf="description.invalid && description.touched">
+            <div *ngIf="description.errors!['required']">
+                La description est obligatoire
+            </div>
+            <div *ngIf="description.errors!['minlength']">
+                La description doit etre au min 10 caractères
+            </div>
+        </div>
+    </div>
+    <div>
+        <label>Publié</label>
+        <input type="number" [(ngModel)]="publication.public" name="public" required>
+    </div>
+    <div>
+        <button [disabled]="f.invalid" type="submit">Ajouter</button>
+    </div>
+</form>
